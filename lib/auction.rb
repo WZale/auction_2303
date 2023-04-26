@@ -38,3 +38,10 @@ class Auction
   end
 end
 
+def bidder_info
+  require 'pry'; binding.pry
+end
+
+# bidder_info should return a hash with keys that are attendees, 
+# and values that are a hash with that attendee's budget and 
+# an array of items that attendee has bid on.
