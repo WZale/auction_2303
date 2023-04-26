@@ -36,10 +36,21 @@ class Auction
     end
     bidder_names
   end
-end
 
-def bidder_info
-  require 'pry'; binding.pry
+  def bidder_info
+    bidder_hash = Hash.new
+    attendee_data = Hash.new
+    @items.each do |item|
+      item.bids.keys.each do |attendee|
+        bidder_hash[attendee] = attendee_data
+      end
+    end
+    bidder_hash.each do |bidder|
+      attendee_data[:budget] = bidder[0].budget
+    end
+      require 'pry'; binding.pry
+  end
+
 end
 
 # bidder_info should return a hash with keys that are attendees, 
