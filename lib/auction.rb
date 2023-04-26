@@ -17,8 +17,11 @@ class Auction
     @items.find_all { |item| item.bids == {} }
   end
 
-  
-  # potential_revenue is the total possible sale price of 
-  # the items (the items highest bid)
-
+  def potential_revenue
+    all_items = []
+    @items.each do |item| 
+      all_items << item.current_high_bid if item.current_high_bid != nil
+    end
+    all_items.sum
+  end
 end
