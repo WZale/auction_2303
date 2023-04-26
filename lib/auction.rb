@@ -12,4 +12,13 @@ class Auction
   def item_names
     @items.map { |item| item.name }
   end
+
+  def unpopular_items
+    @items.find_all { |item| item.bids == {} }
+  end
+
+  
+  # potential_revenue is the total possible sale price of 
+  # the items (the items highest bid)
+
 end
