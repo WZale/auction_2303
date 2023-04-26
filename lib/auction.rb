@@ -24,4 +24,17 @@ class Auction
     end
     all_items.sum
   end
+
+  def bidders
+    bidder_names = []
+    @items.each do |item|
+      if item.bids != {}
+        item.bids.each do |key, value|
+          bidder_names << key.name
+        end
+      end
+    end
+    bidder_names
+  end
 end
+
